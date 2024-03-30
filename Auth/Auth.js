@@ -1,7 +1,7 @@
 // pull in user schema
 const User = require('../model/User.js');
 
-// define a route to register a new user
+// route to register a new user
 exports.register = async (req, res, next) => {
     const { username, password } = req.body;
     if (password.length < 6) {
@@ -25,7 +25,7 @@ exports.register = async (req, res, next) => {
     }
 }
 
-// define a route to log in
+// route to log in existing user
 exports.login = async (req, res, next) => {
     const {username, password} = req.body;  // if username or password empty respond with error message
     if (!username || !password) {
@@ -53,4 +53,9 @@ exports.login = async (req, res, next) => {
             error: err.message
         })
     }
+}
+
+// route to update role of existing user
+exports.update = async (req, res, next) => {
+    
 }

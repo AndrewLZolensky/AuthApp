@@ -10,6 +10,11 @@ const UserSchema = new Mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  role: {
+    type: String,
+    default: "Basic",
+    reequired: true
   }
   // Add any other fields you need here
 });
