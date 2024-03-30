@@ -19,7 +19,7 @@ exports.register = async (req, res, next) => {
     } catch (err) {
         res.status(401).json({
             message: "User not created",
-            error: error.message
+            error: err.message
         })
     }
 }
